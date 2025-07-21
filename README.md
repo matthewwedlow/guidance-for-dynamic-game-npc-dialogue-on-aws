@@ -22,6 +22,7 @@
 
 ## Overview
 
+#Pending Update to include other Game Engines. 
 Typical player interactions with NPCs are static, and require large teams of script writers to create static dialog content for each character, in each game, and each game version to ensure consistency with game lore. This Guidance helps game developers automate the process of creating a non-player character (NPC) for their games and associated infrastructure. It uses Unreal Engine, along with foundation models (FMs), for instance, the large language models (LLMs) Claude 2, and Llama 2, to improve NPC conversational skills. This leads to dynamic responses from the NPC that are unique to each player, adding to scripted dialogue. By using the Large Language Model Ops (LLMOps) methodology, this Guidance accelerates prototyping, and delivery time by continually integrating, and deploying the generative AI application, along with fine-tuning the LLMs. All while helping to ensure that the NPC has full access to a secure knowledge base of game lore, using retrieval-augmented generation (RAG).
 
 ___If you're looking for quick and easy step by step guide to get started, check out the Workshop -  [Operationalize Generative AI Applications using LLMOps](https://catalog.us-east-1.prod.workshops.aws/workshops/90992473-01e8-42d6-834f-9baf866a9057/en-US).___
