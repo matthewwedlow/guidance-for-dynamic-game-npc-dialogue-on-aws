@@ -16,14 +16,14 @@
 5. [Running the Guidance](#running-the-guidance)
     - [Quality Assurance](#quality-assurance)
     - [Hydrating the vector store](#hydrating-the-vector-store)
-    - [Unreal Engine sample project](#unreal-engine-sample-project)
+    - [Unity Engine sample project](#Unity-engine-sample-project)
 6. [Next Steps](#next-steps)
 7. [Cleanup](#cleanup)
 
 ## Overview
 
 #Pending Update to include other Game Engines. 
-Typical player interactions with NPCs are static, and require large teams of script writers to create static dialog content for each character, in each game, and each game version to ensure consistency with game lore. This Guidance helps game developers automate the process of creating a non-player character (NPC) for their games and associated infrastructure. It uses Unreal Engine, along with foundation models (FMs), for instance, the large language models (LLMs) Claude 2, and Llama 2, to improve NPC conversational skills. This leads to dynamic responses from the NPC that are unique to each player, adding to scripted dialogue. By using the Large Language Model Ops (LLMOps) methodology, this Guidance accelerates prototyping, and delivery time by continually integrating, and deploying the generative AI application, along with fine-tuning the LLMs. All while helping to ensure that the NPC has full access to a secure knowledge base of game lore, using retrieval-augmented generation (RAG).
+Typical player interactions with NPCs are static, and require large teams of script writers to create static dialog content for each character, in each game, and each game version to ensure consistency with game lore. This Guidance helps game developers automate the process of creating a non-player character (NPC) for their games and associated infrastructure. It uses Unity Engine, along with foundation models (FMs), for instance, the large language models (LLMs) Claude 2, and Llama 2, to improve NPC conversational skills. This leads to dynamic responses from the NPC that are unique to each player, adding to scripted dialogue. By using the Large Language Model Ops (LLMOps) methodology, this Guidance accelerates prototyping, and delivery time by continually integrating, and deploying the generative AI application, along with fine-tuning the LLMs. All while helping to ensure that the NPC has full access to a secure knowledge base of game lore, using retrieval-augmented generation (RAG).
 
 ___If you're looking for quick and easy step by step guide to get started, check out the Workshop -  [Operationalize Generative AI Applications using LLMOps](https://catalog.us-east-1.prod.workshops.aws/workshops/90992473-01e8-42d6-834f-9baf866a9057/en-US).___
 
@@ -54,7 +54,7 @@ For example, the following table shows a break-down of approximate costs _(per m
 
 These deployment instructions are optimized to best work on a **Amazon Linux 2023** based development environment. Deployment using another OS may require additional steps, and configured Python libraries (see [Third-party tools](#third-party-tools)). The instructions also use the [GitHub fork feature](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) that will connect to [AWS CodePipeline](https://aws.amazon.com/codepipeline/). Once the project is deployed, you may use any code editor and Git client to make and push changes to your fork. When developing this project, we used [Visual Studio Code](https://code.visualstudio.com/) and its [Git integration](https://code.visualstudio.com/docs/sourcecontrol/overview).
 
-The Unreal Engine sample project has been tested using a **Windows 2022 Datacenter (g5.4xlarge)** EC2 instance. See the [Stream a remote environment with NICE DCV over QUIC UDP for a 4K monitor at 60 FPS](https://aws.amazon.com/blogs/gametech/stream-remote-environment-nice-dcv-quic-udp-4k-monitor-60-fps/) blog post, for more information on setting up a similar environment.
+The Unity Engine sample project has been tested using a **Windows 2022 Datacenter (g5.4xlarge)** EC2 instance. See the [Stream a remote environment with NICE DCV over QUIC UDP for a 4K monitor at 60 FPS](https://aws.amazon.com/blogs/gametech/stream-remote-environment-nice-dcv-quic-udp-4k-monitor-60-fps/) blog post, for more information on setting up a similar environment.
 
 >__NOTE:__ A Github [dev container](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers) configuration has been provided should you wish to use [GitHub codespaces](https://docs.github.com/en/codespaces), or [Visual Studio Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) as your development environment.
 
@@ -68,11 +68,11 @@ Before deploying the guidance code, ensure that the following required tools hav
 
 >__NOTE:__ The Guidance has been tested using AWS CDK version 2.178.2. If you wish to update the CDK application to later version, make sure to update the `requirements.txt`, and `cdk.json` files, in the root of the repository, with the updated version of the AWS CDK.
 
-- Unreal Engine 4.26 or 4.27.
-- Microsoft Visual Studio 2022 for Unreal Engine 4 C++ development.
+- Unity Engine 4.26 or 4.27.
+- Microsoft Visual Studio 2022 for Unity Engine 4 C++ development.
 - Microsoft Visual Studio Code for editing.
 
->__NOTE:__ If you need help with these setup steps, refer to the Unreal Engine 4 documentation, especially "Setting Up Visual Studio for Unreal Engine". The  was only tested with Visual Studio 2022 with Unreal Engine 4.27. The Unreal Engine sample __DOES NOT__ work with Ureal Engine 5.
+>__NOTE:__ If you need help with these setup steps, refer to the Unity Engine 4 documentation, especially "Setting Up Visual Studio for Unity Engine". The  was only tested with Visual Studio 2022 with Unity Engine 4.27. The Unity Engine sample __DOES NOT__ work with Ureal Engine 5.
 
 ### AWS account requirements
 
@@ -216,21 +216,21 @@ The following steps will demonstrate how to hydrate the **Amazon OpenSearch Serv
 
 >__NOTE:__ The [Treasure Island by Robert Louis Stevenson](https://www.gutenberg.org/ebooks/120.txt.utf-8) is available for reuse under the terms of the Project Gutenberg License, included with the ebook or online at www.gutenberg.org.
 
-### Unreal Engine sample project
+### Unity Engine sample project
 
-An Unreal Engine sample project, [AmazonPollyMetaHuman](https://artifacts.kits.eventoutfitters.aws.dev/industries/games/AmazonPollyMetaHuman.zip), has been provided for download. This sample [MetaHuman digital character](https://www.unrealengine.com/en-US/digital-humans) can be used to showcase dynamic NPC dialog. Use the following steps to integrate the sample MetaHuman with the deployed guidance infrastructure:
+An Unity Engine sample project, [AmazonPollyMetaHuman](https://artifacts.kits.eventoutfitters.aws.dev/industries/games/AmazonPollyMetaHuman.zip), has been provided for download. This sample [MetaHuman digital character](https://www.Unityengine.com/en-US/digital-humans) can be used to showcase dynamic NPC dialog. Use the following steps to integrate the sample MetaHuman with the deployed guidance infrastructure:
 
 1. Open the [IAM console](https://console.aws.amazon.com/iam/) in your AWS account, [create a new IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
 2. Assign the `AmazonPollyReadOnlyAccess` policy to the newly created user.
 3. Create a new [access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) for the user. 
-4. [Install and configure](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) the AWS CLI on the computer that will run the Unreal Engine sample project to use the `Access Key ID`, and `Secret Access Key` values for the IA M user you created previously.
+4. [Install and configure](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) the AWS CLI on the computer that will run the Unity Engine sample project to use the `Access Key ID`, and `Secret Access Key` values for the IA M user you created previously.
 5. Using the [CloudFormation console](https://console.aws.amazon.com/cloudformation/home), click the deployed `QA` stack. For example, if your `WORKLOAD_NAME` parameter is `Ada`, CloudFormation will reflect that `Ada-QA` as the deployed `QA` stack.
 6. Select the `Outputs` tab, and capture the values for `TextApiEndpointUrl`, and `RagApiEndpointUrl`.
-7. Download, the [AmazonPollyMetaHuman](https://artifacts.kits.eventoutfitters.aws.dev/industries/games/AmazonPollyMetaHuman.zip) zipped Unreal Engine project.
-8. Extract the `AmazonPollyMetaHuman` project folder to the `Unreal Projects` folder of the Unreal Engine development environment.
-9. Launch Unreal Engine 4.27, and open the `AmazonPollyMetaHuman` sample project.
-10. Using the Unreal Editor, select `File` --> `Generate Visual Studio Code Project` to use VS Code for editing source code.
-11. Using the Unreal Editor, select `File` --> `Open Visual Studio Code` to open the project for code editing.
+7. Download, the [AmazonPollyMetaHuman](https://artifacts.kits.eventoutfitters.aws.dev/industries/games/AmazonPollyMetaHuman.zip) zipped Unity Engine project.
+8. Extract the `AmazonPollyMetaHuman` project folder to the `Unity Projects` folder of the Unity Engine development environment.
+9. Launch Unity Engine 4.27, and open the `AmazonPollyMetaHuman` sample project.
+10. Using the Unity Editor, select `File` --> `Generate Visual Studio Code Project` to use VS Code for editing source code.
+11. Using the Unity Editor, select `File` --> `Open Visual Studio Code` to open the project for code editing.
 12. In VS Code, open the `/Source/AmazonPollyMetaHuman/Private/Private/SpeechComponent.cpp` file for editing.
 13. Navigate to the following code section, and replace the `ComboboxUri` variables with the `TextApiEndpointUrl`, and `RagApiEndpointUrl` CloudFormation outputs.
     ```cpp
@@ -250,10 +250,10 @@ An Unreal Engine sample project, [AmazonPollyMetaHuman](https://artifacts.kits.e
             }
     ```
 14. Save the `SpeechComponent.cpp` file, and close VS Code.
-15. Using the Unreal Editor, click the `Compile` button to recompile the C++ code.
+15. Using the Unity Editor, click the `Compile` button to recompile the C++ code.
 16. Once the updated code has been compiled, click the `Play` button to interact with the ___Ada___ NPC.
 
->__NOTE:__ Review the detailed [installation guide](assets/docs/metahuman_windows.md) for Windows 2022 for more information on installing, and configuring both Unreal Engine, and the sample project.
+>__NOTE:__ Review the detailed [installation guide](assets/docs/metahuman_windows.md) for Windows 2022 for more information on installing, and configuring both Unity Engine, and the sample project.
 
 ## Next Steps
 
